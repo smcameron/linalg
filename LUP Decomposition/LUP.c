@@ -90,6 +90,15 @@ double* lup_sol(double** L, double** U, int* P, double* B, int n) {
     return x;
 }
 
+static void free_double_array(double **array, int n)
+{
+    int i;
+
+    for (i = 0; i < n; i++)
+        free(array[i]);
+    free(array);
+}
+
 int main() {
     int n=3;
     double r;
@@ -137,5 +146,9 @@ int main() {
         printf("%lf ", x[i]);
     
     printf("\n");
+
+    free_double_array(L, n);
+    free(P);
+    free(b);
     return 0;
 }
