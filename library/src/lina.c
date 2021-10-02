@@ -397,7 +397,6 @@ void cramer(int **res, int *vol, float *sol, int n)
 dVector vect_mat_multiplication(dVector v, double** mat)
 {
     dVector result = create_dvector(0.0, 0.0, 0.0);
-    int idx;
     result.i = (mat[0][0]*v.i + mat[0][1]*v.j + mat[0][2]*v.k);
     result.j = (mat[1][0]*v.i + mat[1][1]*v.j + mat[1][2]*v.k);
     result.k = (mat[2][0]*v.i + mat[2][1]*v.j + mat[2][2]*v.k);
